@@ -13,7 +13,8 @@ Initial inspection of the packet capture (`2026-01-31-traffic analysis exercise.
 * Hostname Identification:** DHCP options and NBNS traffic identified the target machine as `DESKTOP-ES9F3ML`.
 
 
-
+> **Evidence:**
+> ![DHCP & Host Discovery](images/Screenshot_2026-10-26_22_04_37.png)
 
 
 Phase 2: Authentication & Account Discovery (Kerberos & SAMR)
