@@ -1,14 +1,14 @@
-Incident Analysis Report: Lumma Stealer Network IOC Hunting
+##### Incident Analysis Report: Lumma Stealer Network IOC Hunting
 
-📋 Executive Summary
+## 📋 Executive Summary
 This repository details the packet analysis (`.pcap`) investigation of a network traffic capture. Using `Wireshark`, the investigation traced malicious activity from initial host communication and directory enumeration through `Kerberos` and `SAMR` protocols, ultimately identifying an active Command & Control (C2) beacon communicating with a malicious external domain (`whitepepper.su`). Threat intelligence validation via `VirusTotal` confirmed the external destination as malicious.
 
 ---
 
-🔍 Investigation Overview
+## 🔍 Investigation Overview
 
 ### Phase 1: Network Triage & Host Profiling
-Initial inspection of the packet capture ([2026-01-31-traffic analysis exercise.pcap](2026-01-31-traffic analysis exercise.pcap)) revealed local DHCP transactions and NBNS broadcasts establishing the workstation's identity.
+Initial inspection of the packet capture [2026-01-31-traffic analysis exercise.pcap](2026-01-31-traffic analysis exercise.pcap) revealed local DHCP transactions and NBNS broadcasts establishing the workstation's identity.
 * **DHCP / IP Assignment:** Workstation assigned IP `10.1.21.58` via DHCP server `10.1.21.1`.
 * **Hostname Identification:** DHCP options and NBNS traffic identified the target machine as `DESKTOP-ES9F3ML`.
 
