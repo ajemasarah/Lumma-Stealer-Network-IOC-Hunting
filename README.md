@@ -8,7 +8,7 @@ This repository details the packet analysis (`.pcap`) investigation of a network
 ## 🔍 Investigation Overview
 
 ### Phase 1: Network Triage & Host Profiling
-Initial inspection of the packet capture [2026-01-31-traffic-analysis-exercise.pcap.zip](2026-01-31-traffic analysis exercise.pcap) revealed local DHCP transactions and NBNS broadcasts establishing the workstation's identity.
+Initial inspection of the packet capture [2026-01-31-traffic-analysis-exercise.pcap.zip](2026-01-31-traffic-analysis-exercise.pcap.zip) revealed local DHCP transactions and NBNS broadcasts establishing the workstation's identity.
 * **DHCP / IP Assignment:** Workstation assigned IP `10.1.21.58` via DHCP server `10.1.21.1`.
 
 
