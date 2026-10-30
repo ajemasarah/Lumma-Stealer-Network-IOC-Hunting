@@ -10,11 +10,13 @@ This repository details the packet analysis (`.pcap`) investigation of a network
 ### Phase 1: Network Triage & Host Profiling
 Initial inspection of the packet capture [2026-01-31-traffic analysis exercise.pcap](2026-01-31-traffic analysis exercise.pcap) revealed local DHCP transactions and NBNS broadcasts establishing the workstation's identity.
 * **DHCP / IP Assignment:** Workstation assigned IP `10.1.21.58` via DHCP server `10.1.21.1`.
-* **Hostname Identification:** DHCP options and NBNS traffic identified the target machine as `DESKTOP-ES9F3ML`.
 
 
 > **Evidence:**
 > ![DHCP & Host Discovery](images/Screenshot_2026-10-26_22_04_37.png)
+
+* **Hostname Identification:** DHCP options and NBNS traffic identified the target machine as `DESKTOP-ES9F3ML`.
+
 > ![DHCP & Host Discovery](images/Screenshot_2026-10-29_18_53_36.png)
 
 
@@ -23,11 +25,13 @@ Initial inspection of the packet capture [2026-01-31-traffic analysis exercise.p
 ### Phase 2: Authentication & Account Discovery (Kerberos & SAMR)
 Filtering internal protocol traffic uncovered active user session activity and enumeration queries.
 * **Kerberos Activity:** Multiple AS-REQ and TGS-REQ exchanges were observed involving user account `gwyatt` under domain `WIN11OFFICE`.
+  
+> **Evidence:**
+> * Kerberos Ticket Requests: ![Kerberos Analysis](images/Screenshot_2026-10-27_01_25_28.png)
+
 * **SAMR Enumeration:** Security Account Manager Remote (SAMR) protocol queries (`QueryUserInfo`) executed against domain controller `10.1.21.2` revealed details of the target user profile.
   * **Target Account Name:** `Gabriel Wyatt`
 
-> **Evidence:**
-> * Kerberos Ticket Requests: ![Kerberos Analysis](images/Screenshot_2026-10-27_01_25_28.png)
 > * SAMR User Enumeration: ![SAMR Enumeration](images/Screenshot_2026-10-29_19_25_54.png)
 
 
