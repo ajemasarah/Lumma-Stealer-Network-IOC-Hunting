@@ -38,7 +38,7 @@ Filtering internal protocol traffic uncovered active user session activity and e
 ### Phase 3: Command & Control (C2) Traffic Analysis
 Filtering HTTP traffic (`http.host contains "whitepepper"`) exposed external communication with suspicious infrastructure.
 * **Source IP:** `10.1.21.58` (Compromised Workstation)
-* **Destination IP / Domain:** `153.92.1.49` / [`whitepepper.su`](http://whitepepper.su)[cite: 12]
+* **Destination IP / Domain:** `153.92.1.49` / [`whitepepper.su`](http://whitepepper[.]su)[cite: 12]
 * **URI Pattern:** GET and POST requests to `/api/set_agent?id=3BF67EC05320C5729578...` indicating active beaconing/check-in behavior.
 
 > **Evidence:**
