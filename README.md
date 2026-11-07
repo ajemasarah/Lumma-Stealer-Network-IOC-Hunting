@@ -35,6 +35,8 @@ DHCP transactions and NBNS broadcasts in the capture identify the workstation.
 * **DHCP / IP assignment:** the workstation received `10.1.21.58` from the DHCP server `10.1.21.1`.
 * **Hostname:** DHCP option 12 and NBNS registrations identify the machine as `DESKTOP-ES9F3ML`.
 
+![Phase 1 Host Profiling](images/screenshot_2026-10-26_22_04_37.png)
+
 ### Phase 2: Authentication and Account Context (Kerberos and SAMR)
 Filtering internal protocol traffic identified the logged-in user. This is routine behaviour on a Windows domain and is documented as context, not as an indicator of compromise.
 
