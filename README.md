@@ -35,6 +35,9 @@ DHCP transactions and NBNS broadcasts in the capture identify the workstation.
 * **DHCP / IP assignment:** the workstation received `10.1.21.58` from the DHCP server `10.1.21.1`.
 * **Hostname:** DHCP option 12 and NBNS registrations identify the machine as `DESKTOP-ES9F3ML`.
 
+> **Evidence:**
+> ![DHCP & Host Discovery](images/Screenshot_2026-10-26_22_04_37.png)
+
 ### Phase 2: Authentication and Account Context (Kerberos and SAMR)
 Filtering internal protocol traffic identified the logged-in user. This is routine behaviour on a Windows domain and is documented as context, not as an indicator of compromise.
 
@@ -42,7 +45,7 @@ Filtering internal protocol traffic identified the logged-in user. This is routi
 * **SAMR:** `QueryUserInfo` requests to `10.1.21.2` returned the user profile. These calls are routine on Windows and cannot be attributed to the malware from this capture.
 > **Evidence:**
 > *Kerberos Exchange: ![Kerberos Analysis](images/Screenshot_2026-10-27_01_25_28.png)
-
+> * SAMR User Profile Discovery: ![SAMR Enumeration](images/Screenshot_2026-10-29_19_25_54.png)
 ### Phase 3: Fingerprinting Page and Command-and-Control Traffic
 
 #### 3a. Fingerprinting page (clear-text HTTP)
@@ -63,12 +66,18 @@ Filtering with `http.host contains "whitepepper"` || `ip.addr == 153.92.1.49` sh
 
 This match between the fingerprint page and the beacons ties both events to the same operation.
 
+> **Evidence:**
+> ![HTTP C2 Beaconing](images/Screenshot_2026-10-29_18_53_36.png)
+
 ### Phase 4: Threat Intelligence Verification
 The domain and URL were checked on VirusTotal.
 
 * **Target endpoint:** `hxxp://whitepepper[.]su/api/set_agent`
 * **Result:** flagged as malicious by multiple security vendors (25 of 94 in the screenshot taken for this report)
 * **Note:** VirusTotal later showed a different IP for the domain than the one in the capture. Domains can change IPs over time, so the domain-to-IP link in this report rests on the Host and Origin headers in the PCAP.
+
+> **Evidence:**
+> ![VirusTotal Detection](images/Screenshot_2026-10-30_06_20_33.png)
 
 ---
 
