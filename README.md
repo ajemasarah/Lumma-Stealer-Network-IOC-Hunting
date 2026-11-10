@@ -67,7 +67,8 @@ Filtering with `http.host contains "whitepepper"` || `ip.addr == 153.92.1.49` sh
 This match between the fingerprint page and the beacons ties both events to the same operation.
 
 > **Evidence:**
-> ![HTTP C2 Beaconing](images/Screenshot_2026-10-29_18_53_36.png)
+> ![HTTP C2 Beaconing](images/Screenshot_2026-10-30_06_20_33.png)
+
 
 ### Phase 4: Threat Intelligence Verification
 The domain and URL were checked on VirusTotal.
@@ -77,7 +78,7 @@ The domain and URL were checked on VirusTotal.
 * **Note:** VirusTotal later showed a different IP for the domain than the one in the capture. Domains can change IPs over time, so the domain-to-IP link in this report rests on the Host and Origin headers in the PCAP.
 
 > **Evidence:**
-> ![VirusTotal Detection](images/Screenshot_2026-10-30_06_20_33.png)
+> ![VirusTotal Detection](images/Screenshot_2026-10-30_06_37_36.png)
 
 ---
 
